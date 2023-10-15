@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Celpi</title>
+<link rel="stylesheet" href="http://www.celpi.io/theme/basic/css/default.css?ver=220620">
+<link rel="stylesheet" href="http://www.celpi.io/js/font-awesome/css/font-awesome.min.css?ver=220620">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css?ver=220620">
+<link rel="stylesheet" href="http://www.celpi.io/theme/basic/css/aos.css"/>
+<link rel="stylesheet" href="http://www.celpi.io/theme/basic/css/carousel.css"/>
+<link rel="stylesheet" href="http://www.celpi.io/theme/basic/css/main.css"/>
+<!--[if lte IE 8]>
+<script src="http://www.celpi.io/js/html5.js"></script>
+<![endif]-->
+<script>
+// 자바스크립트에서 사용하는 전역변수 선언
+var g5_url       = "http://www.celpi.io";
+var g5_bbs_url   = "http://www.celpi.io/bbs";
+var g5_is_member = "";
+var g5_is_admin  = "";
+var g5_is_mobile = "";
+var g5_bo_table  = "";
+var g5_sca       = "";
+var g5_editor    = "";
+var g5_cookie_domain = "";
+var g5_theme_shop_url = "http://www.celpi.io/theme/basic/shop";
+var g5_shop_url = "http://www.celpi.io/shop";
+</script>
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<script src="http://www.celpi.io/js/jquery-1.12.4.min.js?ver=221017"></script>
+<script src="http://www.celpi.io/js/jquery-migrate-1.4.1.min.js?ver=221017"></script>
+<script src="http://www.celpi.io/js/jquery.menu.js?ver=221017"></script>
+<script src="http://www.celpi.io/js/common.js?ver=221017"></script>
+<script src="http://www.celpi.io/js/wrest.js?ver=221017"></script>
+<script src="http://www.celpi.io/js/placeholders.min.js?ver=221017"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="http://www.celpi.io/js/jscrollability.js?ver=221017"></script>
+<script src="http://www.celpi.io/js/aos.js?ver=221017"></script>
+<script src="http://www.celpi.io/js/main.js?ver=221017"></script>
+</head>
+<body>
+
+    
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 --><header id="header">
+    <div class="con">
+        <h1 class="hlogo"><a href="/">Celpi</a></h1>
+        <ul class="gnb">
+            <li>
+                <a href=".section01">Main</a>
+            </li>
+            <li>
+                <a href=".story">Story</a>
+                <!--<ul>
+					<li><a href=".story01"><em>Celpi Story01</em></a></li>
+					<li><a href=".story02"><em>Celpi Story02</em></a></li>
+				</ul>-->
+            </li>
+            <li><a href=".section02">Video</a></li>
+            <li>
+                <a href=".section03">Celpi NFT</a>
+                <ul>
+					<li><a href=".nft_project"><em>Celpi NFT Project</em></a></li>
+					<li><a href=".bayc"><em>Celpi in BAYC</em></a></li>
+					<!-- li><a href=".mystery"><em>Mystery Box</em></a></li -->
+					<li><a href=".section03"><em>NFT</em></a></li>
+				</ul>
+            </li>
+            <li><a href=".section06">Roadmap</a></li>
+            <li><a href=".section07">Team</a></li>
+            <li><a href=".section08">Partner</a></li>
+            <li><a href=".section09">FAQ</a></li>
+            <li><a href="javascript:alert('Coming Soon')">Bunker</a></li>
+            <li><a href="javascript:alert('Coming Soon')">Token</a></li>
+        </ul>
+		
+			
+        <div>
+            <a href="#" class="btn-mint"><em>Guide for mint</em></a>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28px" height="28px"><image  x="0px" y="0px" width="28px" height="28px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAQAAADYBBcfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmBAEKNQzn5ZjRAAACJElEQVQ4y52VP0iUcRzGP+/9CSm5BjnoDzgUISSBQpC0JFYEB9EgbU4tCQ021eQQOLgrNQQSnOTQ4hBCEFI0ZNBQw9lwHRwNnhBRatqFnp+Ge717O98b9HmX3/f3/T7wvF/e53kDaUGSG+QY4BwZYJ0iSyzwilrLnNEn7ZirxmHVMdPR2Sitz4KqVSccMmvZslmHnLCqasG+OOKwVXVVfRLelC2Hp+mwU3W4lThsTc37WL2+j3hVfWpere1R90RW1UkDv/i78S5NYtI1vxo4qVbrgusrKah5A7Pq64b4JhFfqqcNzKsF03XiuAfFuGDSyoGJFZOYU0smRHyhdsdKPanOi5iwpOYS5IA5dgE4zwbfiEOFn/QCsMsckEswACyG7TOUaIcS3eFpERhI0QNkGAQ66eAvg43RDohUOxzhJhtABugJlEMhBcBbAI5xkRWKjd4l4EOj6uEEH9kE4ArgmpoVsVedjnz00a3iM/WsiFl1LUERuADAJtDZVlsa2IZwuphgCRgC4BfQ1ZbYBXyHcHopxQL3GOUHAjv0c78xmoFI1c8f7gIBo8BCYJJ1jh5wpVtkUtSY4iHrzLLNNXp5HgqCO8BMeD7FbT7zhjQjZJiiVrfVcmirEfVB7FYfqbdabdU0ctZtP8UQA4tuebzVyNHomFcvx0bHbFx0NMOqor7bR3yvrsSHVV3wcmjUmf/icSa8XY6Px71ArrTxfEsgB4f9BfwDgufRzaPwFJ4AAAAASUVORK5CYII=" /></svg></a>
+        </div>
+
+		<ul class="guide-list">
+			<li><a href="/pdf/join_kaikas.pdf" target="_blank">Kaikas 가입</a></li>
+			<li><a href="/pdf/mint_klip.pdf" target="_blank">민팅 사이트 연동(클립)</a></li>
+			<li><a href="/pdf/mint_kaikas.pdf" target="_blank">민팅 사이트 연동(카이카스)</a></li>
+			<li><a href="/pdf/opensea.pdf" target="_blank">오픈씨 연동</a></li>
+			<li><a href="/pdf/deposit.pdf" target="_blank">입금 및 보내기</a></li>
+			<li><a href="/pdf/deposit_mobile.pdf" target="_blank">입금 및 보내기(모바일)</a></li>
+			<li><a href="/pdf/join_korbit.pdf" target="_blank">코빗 회원가입</a></li>
+			<li><a href="/pdf/certi_korbit.pdf" target="_blank">코빗 가입 및 본인인증(모바일)</a></li>
+			<li><a href="/pdf/certi_korbit_pc.pdf" target="_blank">코빗 본인인증(PC)</a></li>
+			<li><a href="/pdf/join_klip.pdf" target="_blank">클립 가입</a></li>
+			
+			</ul>
+		
+        <button class="m_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="mobile-screen">
+        <div class="bg"></div>
+        <div class="mobile-inner">
+            <ul class="link-list">
+                <li>
+                    <a href=".story">Story</a>
+                    <!--<ul>
+                        <li><a href=".story01"><em>Celpi Story01</em></a></li>
+                        <li><a href=".story02"><em>Celpi Story02</em></a></li>
+                    </ul>-->
+                </li>
+                <li><a href=".section02">Video</a></li>
+                <li class="depth">
+                    <a href=".section03">Celpi NFT<i class="xi-angle-down"></i></a>
+                    <ul>
+                        <li><a href=".nft_project"><em>Celpi NFT Project</em></a></li>
+                        <li><a href=".bayc"><em>Celpi in BAYC</em></a></li>
+						<!-- li><a href=".mystery"><em>Mystery Box</em></a></li -->
+                        <li><a href=".section03"><em>NFT</em></a></li>
+                    </ul>
+                </li>
+                <li><a href=".section06">Roadmap</a></li>
+                <li><a href=".section07">Team</a></li>
+                <li><a href=".section08">Partner</a></li>
+                <li><a href=".section09">FAQ</a></li>
+                <li><a href="javascript:alert('Coming Soon')">Bunker</a></li>
+                <li><a href="javascript:alert('Coming Soon')">Token</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main id="main">
+    <section class="section01">
+        <div class="con">
+            <div class="txt_box">
+                <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>Celpi</h2>
+                <!-- span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>Pre Sale</span>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true'>
+                    Mystery Box Minting<br>
+                    Now<br>
+                    (5,000units).
+                </p -->
+                <a href="https://opensea.io/collection/celpi-nft-v2" class="link_btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once='true' target="_blank"><em>Go to Opensea</em></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="story">
+        <!--<div class="story_box story01">
+            <div class="con">
+                <div class="title_box">
+                    <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>Celpi</strong>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>STORY</p>
+                </div>
+                <div class="desc_box" data-aos="fade" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                    <strong>Celpi, 도지군단에 대비하라!</strong>
+                    <p class="cont_p">
+                        평화로운 화성을 한순간 쑥대밭으로 만든 도지군단을 피해<br class="br_m">
+                        지구로 도망쳐 온 화성인들은 도지군단의 최종 우두머리가<br class="br_m">
+                        지구에 사는 머스크라는 인간인 것을 알게됩니다.<br><br>
+                        화성인들은 행성을 잃은 복수를 하기 위해 인간 머스크를 제거하기로 하고<br class="br_m">
+                        인간에게 친숙한 고양이인 셀피로 변신하여 잠입합니다.<br><br>
+                        하지만!<br class="br_m">
+                        지구에는 고양이 보다 화성을 침략했던 바로 그 강아지들이<br class="br_m">
+                        인간을 조종하고 있었던 것!!<br><br>
+                        어떻게 하면 인간들을 우리편으로 만들 수 있을까?
+                    </p>
+                </div>
+            </div>
+        </div>-->
+		<div class="story_box bayc_story">
+			<div class="con">
+                <p>셀피 총사령관 <span>아이언 B</span>는 커버넌트 호를 타고 <br>
+                <span>함장 스켈레턴</span>(스켈레턴 비행 부대)과 <span>블레이즈 장군</span>(블레이즈 공격 부대)를 이끌고 지구로 향한다 .<br>
+                <br>
+                화성에서 잡은  도지들을 합성해 재탄생 시킨 스톰장갑부대와 다크유디티 부대를 이끌고ᆢ<br><br>
+                
+                이들은 커버넌트 호에서 지구인들에게 침투하기위한<br>
+                고양이 형상으로 변형을 하며 머나먼 여정을 떠난다.</p>
+            </div>
+		</div>
+        <div class="story_box story02">
+            <div class="con">
+                <div class="story02_thumb" thumbsSlider="">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_thumb01.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <span class="cont_p">Chapter 01</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_thumb02.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <span class="cont_p">Chapter 02</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_thumb03.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <span class="cont_p">Chapter 03</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_thumb04.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <span class="cont_p">Chapter 04</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="story02_slide">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_img01.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <p class="cont_p">
+                                    화성에 거주중인 외계인 무리, 어느때와 같이 즐거운 일상생활을 하던 그들 ,  화성인들의  최대협곡 Mariner Valley에서 즐거운 파티를 열고 있었는데 ᆢ<br>
+<br>
+클럽 DJ (<strong>메타콩즈</strong>)<br>
+클럽가드  Bayc(<strong>#2771</strong>)<br>
+클럽 경호 MAYC(<strong>#1701</strong>, <strong>#15454</strong>) <br>
+경비견  BAKC(<strong>#4602</strong>, <strong>#3313</strong>)
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_img02.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <p class="cont_p">어디선가 날아오는 미사일과 도착한 우주왕복선으로 평화롭던 화성은 도지 군단의 총공격을 받고 마는데..</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_img03.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <p class="cont_p">
+                                    도지 군단의 두목이 머스크라는 지구인이라는 것을 알게된 외계인들은 복수를 위해 지구로 탈출하게 되는데.. 지구인들에게
+                                    친근한 고양이 ‘셀피’로 변신하여 잠입하였다. 영향력 있는 유명한 셀럽들에게 잠입하여 이들을 세뇌시켜 화성을 구하기 위한 힘을
+                                    준비중인데.. 여기서 가장 큰 문제를 직면하고 만다. 현재 지구의 실세는 고양이들이 아닌, 바로 우리 행성을 침공했던 바로 그
+                                    강아지들...! 어떻게 하면 인간들을 우리 편으로 돌릴 수 있을까?
+                                </p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="img_box">
+                                <img src="/img/story02_img04.jpg" alt="">
+                            </div>
+                            <div class="txt_box">
+                                <p class="cont_p">
+                                    잠입하자마자 뜻밖의 CF광고 촬영에 깜짝 등장하며 존재를 알린 셀피. 셀피의 등장으로 광고는 단숨에 화제에 오르고 마는데!?
+                                    영상 댓글에는 고양이파로의 전환을 선언하는 인간들이 넘쳐난다. 그래, 이 방법이야! 지구상의 모든 인간을 사로잡아 화성을 되찾기 위한
+                                    셀피들의 스펙타클한 여정이 시작된다.<br><br>
+                                    우리의 적, 도지를 무찌르는 그날까지!!
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section02">
+        <div class="con">
+            <iframe src="//player.vimeo.com/video/693005518?quality=1080p&autopause=0&playsinline=1&autoplay=0&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen data-aos="fade" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'></iframe>
+        </div>
+        <div class="txt_box">
+            <div class="wrap">Celpi Market to Earn</div>
+            <div class="wrap">Meta futures</div>
+            <div class="wrap">CryptoCurrency</div>
+        </div>
+    </section>
+    
+    <section class="story celpi_nft">
+        <div class="story_box parall nft_project bg_story">
+            <div class="con">
+            <div class="img_box">
+                <img src="/img/section05_img1.jpg" data-aos="fade" data-aos-duration="1000" data-aos-delay="150" data-aos-once='true'>
+                <img src="/img/section05_img2.jpg" data-aos="fade" data-aos-duration="1000" data-aos-delay="150" data-aos-once='true'>
+            </div>
+                <div class="title_box">
+                    <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>Celpi</strong>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>PFP NFT Project</p>
+                </div>
+                <div class="desc_box" data-aos="fade" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                    <strong>Celpi, 셀피 NFT란?</strong>
+                    <p class="cont_p">
+                        <span>Celpi</span> (셀피)는 Klaytn을<br class="br_m">
+                        시작점으로 하여 <span>M2E(Market to Earn)</span>를 추구하는<br class="br_m">
+                        PFP NFT 프로젝트입니다.<br><br>
+                        Celpi NFT를 운영하는데 있어서 가장 중요한 비전은<br class="br_m">
+                        홀더들에게 프라이빗한 혜택을 제공함과 더불어, 협업 커뮤니티 운영을 통하여<br class="br_m">
+                        수익화에 초점을 맞추었습니다. Celpi NFT를 소유한 유저는 커뮤니티 또는 DAO에서<br class="br_m">
+                        자유로운 영향력을 발휘하여, 프로젝트 방향성을 선택 할 수 있습니다.<br><br>
+                        <span>Celpi</span>는 안정적인 NFT 민팅 후에 Mining 시스템 오픈, 클레이스왑 DeFi 오픈,<br class="br_m">
+                        타 NFT 프로젝트와의 협업, 프라이빗한 오프라인 혜택, 대규모 이벤트 등<br class="br_m">
+                        <span>NFT를 기반으로 하는 다양한 사업을 영위 할 예정</span>입니다.
+                    </p><br>
+<br>
+
+                <a href="https://opensea.io/collection/celpi-nft-v2" class="link_btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true' target="_blank"><em>Buy Now</em></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="story_box bayc">
+            <div class="con">
+                <div class="img_box gallery">
+                	<ul class="gallery-container">
+                        <li class="gallery-item gallery-item-1" data-index="1" ><img src="/img/story_img01.png" /></li>
+                        <li class="gallery-item gallery-item-2" data-index="2"><img src="/img/story_img02.png" /></li>
+                        <li class="gallery-item gallery-item-3" data-index="3"><img src="/img/story_img03.png" /></li>
+                        <li class="gallery-item gallery-item-4" data-index="4"><img src="/img/story_img04.png" /></li>
+                        <li class="gallery-item gallery-item-5" data-index="5"><img src="/img/story_img05.png" /></li>
+                    </ul>
+                    <div class="gallery-controls"></div>
+                </div>
+                <script src="../../../js/carousel.js"></script>
+                <div class="txt_box">
+                    <div class="title_box">
+                        <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>Celpi</strong>
+                        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150" data-aos-once='true'>with</p>
+                        <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>BAYC</strong>
+                    </div>
+                    <div class="desc_box" data-aos="fade" data-aos-duration="1000" data-aos-delay="400" data-aos-once='true'>
+                        <strong>Celpi는 BAYC와 함께 합니다.</strong>
+                        <p class="cont_p">
+                            Celpi NFT는 NFT프로젝트를 위하여 Collaborate가능한<br class="br_m">
+                            모든 NFT들을 컬렉팅 하고있습니다.<br class="br_m">
+                            <span>그중 첫번째 챕터가 BAYC입니다.</span><br><br>
+                            Bored Ape Yacht Club(#2771), Mutant Ape Yacht Club(#15454),<br class="br_m">
+                            Mutant Ape Yacht Club(#1701), Bored Ape Kennel Club(#4602), Bored Ape Kennel Club(#3113)<br class="br_m">
+                            첫번째 <span>셀피유니버스</span>의 <span>조력자</span>들 입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section class="story_box mystery">
+        <div class="con">
+            <div class="img_box">
+				 <img src="/img/mystery_01.jpg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'/>                
+				 <img src="/img/mystery_02.jpg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'/>                
+            </div>
+            <div class="title_box">
+				
+				<strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>Mystery Box</strong>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>Celpi, 셀피 MysteryBox란?</p>
+			</div>
+			<div class="desc_box" data-aos="fade" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                    
+				<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>
+                    Celpi는 각각 다른 외관을 가지고 있으며<br>
+NFT 소유자들에게 독점적인 특권을 제공합니다.<br>
+<br>
+레어포함 총 10,000여개의<br>
+Celpi 리미티드 컬렉션이 있습니다.<br>
+<br>
+셀피 미스테리 박스에는 특별한 혜택이 숨어 있습니다.<br>
+이 혜택은 지금 아니면 만나보실 수 없습니다.<br>
+바로 만나러 가볼까요?<br>
+                </p>
+                <a href="https://opensea.io/collection/celpi-nft-v2" class="link_btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true' target="_blank"><em>Buy Now</em></a>
+            </div>
+        </div>
+    </section -->
+    <section class="section03">
+        <div class="con">
+            <div class="title_box">
+                <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>NFT</strong>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>
+                    Celpi는 은하간 NFT 집합체입니다.<br>
+                    그들만의 독특한 Celpi Universe로 여러분을 초대합니다.
+                </p>
+                <a href="https://opensea.io/collection/celpi-nft-v2" class="link_btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true' target="_blank"><em>Buy Now in Opensea</em></a>
+            </div>
+            <div class="section03_slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="/img/section03_img1.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="/img/section03_img2.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="/img/section03_img3.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="/img/section03_img4.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="/img/section03_img5.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="/img/section03_img6.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--<section class="section05">
+        <div class="con">
+            <div class="txt_box">
+                <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>THE SPECS</strong>
+                <p class="cont_p" data-aos="fade" data-aos-duration="1000" data-aos-delay="650" data-aos-once='true'>
+                    Each Celpi is unique, programmatically generated from over 100,000 possible outcomes weighted by rarity. 
+                    Traits include horns, outfits, expressions, eyes, skin, headwear, backgrounds and more!<br><br>
+
+                    The 1st generation consists of 10,000 generated Celpi.<br><br>
+
+                    The Celpi are stored as Klay tokens<br>
+                    on the Klayton blockchain.
+                </p>
+                <a href="#" class="link_btn" data-aos="fade" data-aos-duration="1000" data-aos-delay="700" data-aos-once='true'><em>Mint Now</em></a>
+            </div>
+            <div class="img_box">
+                <img src="/img/section05_img1.jpg" data-aos="fade" data-aos-duration="1000" data-aos-delay="150" data-aos-once='true'>
+                <img src="/img/section05_img2.jpg" data-aos="fade" data-aos-duration="1000" data-aos-delay="150" data-aos-once='true'>
+            </div>
+        </div>
+    </section>-->
+
+    <section class="section06">
+        <div class="con">
+            <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>The Roadmap</strong>
+            <div class="section06_slide">
+                <ul>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                        <dl class="year">
+                            <dt>Phase1</dt>
+                        </dl>
+                        <ul class="road_map_list cont_p">
+                            <li>
+								<div class="cover_roadmap"></div>
+                                <span>0%</span>
+                                
+                                    <h5>셀피의 시작, 커뮤니티 오픈</h5>
+                                    <p>홈페이지, 디스코드 커뮤니티를 오픈한다.</p>
+                            </li>
+                            <li>
+								<div class="cover_roadmap"></div>
+                                <span>5%</span>
+                                <h5>대한민국에서 잘 나간다는 셀럽들에게 침투하라!</h5>
+                                <p>PFP NFT X 10,000 Celpi 분양</p>
+                            </li>
+                            <li>
+								<div class="cover_roadmap"></div>
+                                <span>10%</span>
+                                <h5>셀피를 사랑하도록 만든다.  대한민국은 셀피 전성시대!</h5>
+                                <p>전국 티비광고, 버스광고 실현</p>
+                                    
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                        <dl class="year">
+                            <dt>Phase2</dt>
+                        </dl>
+                        <ul class="road_map_list cont_p">
+                            <li>
+								<div class="cover_roadmap"></div>
+                                <span>15%</span>
+                                <h5>
+                                    세뇌된 셀럽들이 스스로 셀피를 알리도록 하자.
+                                </h5>
+                                <p>트위터, 인스타그램 등 SNS 계정에 PFP 셀피 NFT를 등록시키면 츄르N토큰 지급. 국내외 연예인들과 다양한 컨셉의 미디어 콜라보 적극적인 Meme화</p>
+                                
+                                
+                                
+                            </li>
+                            <li>
+                                <span>20%</span>
+                                <h5>
+                                    더 큰 무리를 형성하기 위해 다른 종들과 연합한다.
+                                </h5>
+                                <p>
+                                    (NFT프로젝트와 역대급 콜라보레이션 진행) 힘의 균형을 깨기위해 동맹군을 결성한다. <br>
+협업 NFT 프로젝트 진행 - 새로운 유니버스 등장.
+
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                        <dl class="year">
+                            <dt>Phase3</dt>
+                        </dl>
+                        <ul class="road_map_list cont_p">
+                            <li>
+                                <span>25%</span>
+                                <h5>메타버스 셀피의 영역 확대</h5>
+                                <p>더 샌드박스 내 캣타워 구축<br>
+셀피랜드에 들어가기 위해선, 메타버스에 들어갈 수 있는 셀피로 차원이동준비.</p>
+                            </li>
+                            <li>
+                                <span>30%</span>
+                                <h5>이것이 셀피 패밀리의 힘!</h5>
+                                <p>셀피와 셀피와의 브리딩(Breeding Fee 발생), 오리지날 셀피 NFT 등장.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                        <dl class="year">
+                            <dt>Phase4</dt>
+                        </dl>
+                        <ul class="road_map_list cont_p">
+                            <li>
+                                <span>40%</span>
+                                <h5>츄르N토큰 등장 (우리에겐 우리만의 에너지 부스터가 필요하다)</h5>
+                                <p>화성과 지구의 중력은 다르다. 지구에서의 활동은 더 많은 에너지를 소비한다. 셀피들만의 츄르가 필요하다. 셀피를 움직이게 하는 원동력 츄르 등장!<br>
+츄르N토큰 발행 - 토큰 사용처, 토큰 생태계 정식 발표.</p>
+                            </li>
+                            <li>
+                                <span>50%</span>
+                                <h5>머스크의 지원이 만만치 않다. 더 강력한 셀피가 필요하다.</h5>
+                                <p>토큰 선순환, NFT 가치 보존을 위하여 민팅 후 셀피를 n개 이상 보유한 홀더들에게 뮤턴트 츄르 NFT 화리권을 지급한다. (기존 셀피 + 뮤턴트 츄르 NFT 소각)</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                        <dl class="year">
+                            <dt>Phase5</dt>
+                        </dl>
+                        <ul class="road_map_list cont_p">
+                            <li>
+                                <span>60%</span>
+                                <h5>셀피 집사들아 집결하라! Mining / DeFi / Governance 개발 및 정식 런칭.</h5>
+                                
+                            </li>
+                            <li>
+                                <span>70%</span>
+                                <h5>대형 브랜드에게 협업을 제안한다.</h5>
+                                <p>IP콜라보를 진행, 셀피 굿즈샵 오픈, 프라이빗 연말파티 초대권 등</p>
+                            </li>
+                            <li>
+                                <span>80%</span>
+                                <h5>메타버스에 P2E 게임 개발을 시도한다.</h5>
+                                <p>게임 공식 유튜브 채널을 개설한다. 알파 티져 영상을 공개한다. 개발 영상을 공개한다.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                        <dl class="year">
+                            <dt>Phase6</dt>
+                        </dl>
+                        <ul class="road_map_list cont_p">
+                            <li>
+                                <span>90%</span>
+                                <h5>승부타임이 다가온다. 막강한 화력을 지원한다. (N = 5/10/15)</h5>
+                                <p>셀피 NFT n개 이상 홀더들에게 파트너사들의 다양한 이벤트 지원<br>
+셀피 NFT n개 이상 홀더들에게 비율에 맞춰 마켓플레이스 거래수수료 에어드랍<br>
+셀피 NFT n개 이상 홀더들에게 화끈한 츄르N토큰 에어드랍</p>
+
+                                
+                            </li>
+                            <li>
+                                <span>100%</span>
+                                <h5>머스크에 결투를 신청한다. 셀피의 운명은?</h5>
+                                <p>2.0은 지구에 메타버스를 정복</p>
+
+                                
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="section07">
+        <div class="con">
+            <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>Team</strong>
+            <p class="cont_p" data-aos="fade" data-aos-duration="1000" data-aos-delay="650" data-aos-once='true'>
+                Celpi팀의 무궁무진한 노력과 열정적인 자세 때문에 아주 난감하기도 합니다.
+이들은 매우 열정적이라서 때로는 사무실에서 쫓아내기도 한다구요.<br />
+<br />
+예술가, 소셜 커뮤니티 관리자, 블록체인전문가, 마케팅 괴짜들로 이루어진 Celpi팀은 커뮤니티가 번영하고 Collect-To-Earn 아이디어가 계속 살아가게 하기 위해 무엇이든 할 것입니다.
+            </p>
+
+            <ul class="member_list img_box">
+                <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>
+                    <div class="img_box">
+                        <img src="/img/section07_img1.png" alt="">
+						<a href="https://www.linkedin.com/in/gio-kim-4b13bb236/" target="_blank"><img src="/img/section07_icon.png" class="member_icon"></a>
+                    </div>
+                    <strong>Gio Kim</strong>
+                    <!-- span class="cont_p">CMO</span -->
+                </li>
+                <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>
+                    <div class="img_box">
+                        <img src="/img/section07_img3.png" alt="">
+                        <a href="https://www.linkedin.com/in/chris-jeon-541677235/" target="_blank"><img src="/img/section07_icon.png" class="member_icon"></a>
+                    </div>
+                    <strong>Chris Jeon</strong>
+                    <!-- span class="cont_p">Project Manager</span -->
+                </li>
+                <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true'>
+                    <div class="img_box">
+                        <img src="/img/section07_img4.png" alt="">
+                        <a href="https://www.linkedin.com/in/jack-kang-a74472236/" target="_blank"><img src="/img/section07_icon.png" class="member_icon"></a>
+                    </div>
+                    <strong>Jack Kang</strong>
+                    <!-- span class="cont_p">Team Manager</span -->
+                </li>
+                <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                    <div class="img_box">
+                        <img src="/img/section07_img2.png" alt="">
+                        <a href="https://www.linkedin.com/in/jessica-yoo-67064a237/"><img src="/img/section07_icon.png" class="member_icon"></a>
+                    </div>
+                    <strong>Jessica Yoo</strong>
+                    <!-- span class="cont_p">CEO</span -->
+                </li>
+                <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once='true'>
+                    <div class="img_box">
+                        <img src="/img/section07_img5.png" alt="">
+                        <a href="https://www.linkedin.com/in/jinny-oh-659680199/"><img src="/img/section07_icon.png" class="member_icon"></a>
+                    </div>
+                    <strong>Jinny oh</strong>
+                    <!-- span class="cont_p">CEO</span -->
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section08">
+        <div class="con">
+            <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>Partner &amp; Investors</strong>
+            <p class="cont_p" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>Celpi는 최고의 기술과 비즈니스를 위해 최고의 파트너와 협력합니다.</p>
+
+            <ul class="partner_list" data-aos="fade" data-aos-duration="1000" data-aos-delay="600" data-aos-once='true'>
+                <li><img src="/img/section08_logo1.png" alt=""></li>
+                <li><img src="/img/section08_logo2.png" alt=""></li>
+                <li><img src="/img/section08_logo3.png" alt=""></li>
+                <!-- <li><img src="/img/section08_logo4.png" alt=""></li>
+                <li><img src="/img/section08_logo5.png" alt=""></li> -->
+            </ul>
+        </div>
+    </section>
+
+    <section class="section09">
+        <div class="con">
+            <strong class="title_txt" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>FAQS</strong>
+            <p class="cont_p" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>Celpi 커뮤니티에 가입해 보세요.</p>
+            <ul class="link_list">
+                <li data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'><a href="https://opensea.io/Celpi" target="_blank"><img src="/img/section09_sns1.png" alt=""></a></li>
+                <li data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'><a href="https://twitter.com/Celpi_Official" target="_blank"><img src="/img/section09_sns2.png" alt=""></a></li>
+                <li data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true'><a href="https://discord.com/invite/vy3mDnzaK9" target="_blank"><img src="/img/section09_sns3.png" alt=""></a></li>
+                <!-- li data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400" data-aos-once='true'><a href="#"><img src="/img/section09_sns4.png" alt=""></a></li -->
+            </ul>
+
+            <ol class="faq_list">
+                <li data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" data-aos-once='true'>
+                    <dl>
+                        <dt>
+                            <span class="num">01</span>
+                            Celpi 민팅은 언제 인가요?
+                        </dt>
+                        <dd class="cont_p">현재 프리세일을 진행중입니다. 민팅 가이드를 참고하세요.</dd>
+                    </dl>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200" data-aos-once='true'>
+                    <dl>
+                        <dt>
+                            <span class="num">02</span>
+                            Celpi NFT 의 특별한 혜택이 있나요?
+                        </dt>
+                        <dd class="cont_p">
+                            5개, 10개, 15개 홀더분을 대상으로 프라이빗한 이벤트 준비예정입니다.<br />
+레어 NFT 홀더분들께는 남들과 다른 특별한 혜택을 제공합니다.
+                        </dd>
+                    </dl>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true'>
+                    <dl>
+                        <dt>
+                            <span class="num">03</span>
+                            민팅은 어떻게 하나요?
+                        </dt>
+                        <dd class="cont_p">클레이튼 네트워크의 경우 카이카스 지갑으로 민팅할 수 있습니다.<br />
+매뉴얼을 참고해 주세요.<br />
+<!-- a href="https://www.celpinft.com/" class="link_btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true'><em>Celpi 민팅 메뉴얼</em></a --><a href="http://celpi.io/pdf/join_korbit.pdf" class="link_btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true'><em>Korbit 이용하기</em></a><a href="http://celpi.io/pdf/opensea.pdf" class="link_btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once='true'><em>Opensea 이용하기</em></a></dd>
+                    </dl>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400" data-aos-once='true' class="section11">
+                    <dl>
+                        <dt>
+                            <span class="num">04</span>
+                            판매일정과 가격은 어떻게 되나요?
+                        </dt>
+                        <dd class="cont_p">
+                            OG, WL, 프리세일, 공식민팅은 아래 일정을 참고해 주세요.<br><br>
+
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>1차 프리세일</dt>
+                                        <dd>일정 : 2022년 4월 22일 14:30~ 2022년 4월 25일 (Sold out)</dd>
+                                        <dd>대상 : 누구나</dd>
+                                        <dd>발행가격 : 350 KLAY (via Kaikas)</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>2차 확정 화이트리스트 세일</dt>
+                                        <dd>일정 : 2022년 4월 27일 21:00시부터 소진시까지 (대한민국 표준시)</dd>
+                                        <dd>대상 : 확정 WL 당첨자</dd>
+                                        <dd>발행가격 : 350 KLAY (via Kaikas)</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>3차 경쟁 화이트리스트 세일</dt>
+                                        <dd>일정 : 2022년 4월 27일 22:00시부터 소진시까지 (대한민국 표준시)</dd>
+                                        <dd>대상 : OG, WL 당첨자</dd>
+                                        <dd>발행가격 : 350 KLAY (via Kaikas)</dd>                                        
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>4차 퍼블릭 세일</dt>
+                                        <dd>일정 : 2022년 4월 28일 21:00시부터 소진시까지 (대한민국 표준시)</dd>
+                                        <dd>대상 : 누구나</dd>
+                                        <dd>발행가격 : 400 KLAY (via Kaikas)</dd>
+                                    </dl>
+                                </li>
+								<li>
+								※ 추후 클레이 시세로 인해 민팅가가 조절될 수 있습니다.
+								</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </li>
+                <li data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500" data-aos-once='true'>
+                    <dl>
+                        <dt>
+                            <span class="num">05</span>
+                            Celpi NFT 는 각각 몇개씩 발행 되나요?
+                        </dt>
+                        <dd class="cont_p">발행 총 갯수 : 10,000개</dd>
+                        <dd class="cont_p">1차 프리세일 : 5,000개</dd>
+                        <dd class="cont_p">2차 확정 화이트리스트 세일 : 1,000개</dd>
+                        <dd class="cont_p">3차 경쟁 화이트리스트 세일 : 2,000개</dd>
+                        <dd class="cont_p">4차 퍼블릭 세일 : 1,000개</dd>
+                        <dd class="cont_p">팀 물량(마케팅) : 1,000개</dd>
+                   </dl>
+                </li>
+				
+            </ol>
+        </div>
+    </section>
+</main>
+
+<footer id="footer">
+    <div class="con">
+        <h1 class="flogo">
+            Celpi
+        </h1>
+        <div class="footer_box">
+            <p>@All rights reserved. Celpi 2022</p>
+            <ul class="info_cont">
+                <li><a href="#">Terms Of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer_box">
+            <p>
+                META FUTURES LIMITED<br>
+                Vistra Corporate Services Centre, Suite 23, 1st Floor, Eden Plaza, Eden Island, Mahé, Republic of Seychelles<br><br>
+                celpi.official@gmail.com
+            </p>
+        </div>
+
+        <div class="footer_box">
+            <strong>SOCIAL LINK</strong>
+            <ul class="sns_link">
+                <!-- <li><a href="#"><div class="img_wrap"><img src="/img/f_sns1.png" alt=""></div>TELEGRAM</a></li> -->
+                <!-- <li><a href="#"><div class="img_wrap"><img src="/img/f_sns2.png" alt=""></div>KAKAO</a></li> -->
+                <li><a href="https://opensea.io/collection/celpi-nft-v2" target="_blank"><div class="img_wrap"><img src="/img/f_sns5.png" alt=""></div>OPENSEA</a></li>
+                <li><a href="https://twitter.com/Celpi_Official" target="_blank"><div class="img_wrap"><img src="/img/f_sns3.png" alt=""></div>TWITTER</a></li>
+                <li><a href="https://discord.com/invite/vy3mDnzaK9" target="_blank"><div class="img_wrap"><img src="/img/f_sns6.png" alt=""></div>DISCORD</a></li>
+                <!-- <li><a href="#"><div class="img_wrap"><img src="/img/f_sns4.png" alt=""></div>MEDIUM</a></li> -->
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    
+<button class="top_btn">
+    <img src="/img/top_btn.png" alt="">
+</button>
+
+
+
+<!-- } 하단 끝 -->
+
+<script>
+    $(function() {
+        AOS.init({
+            easing: 'ease-in-out-sine'
+        });
+        
+        // 폰트 리사이즈 쿠키있으면 실행
+        font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+    });
+</script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+
+</body>
+</html>
