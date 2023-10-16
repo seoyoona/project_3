@@ -144,6 +144,14 @@ $(document).ready(function(){
         },
     })
 
+    // popup
+    const closeBtn = document.querySelector('.close_btn');
+    const popup = document.querySelector('.popup');
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+
     // 스토리 버튼
     $(function(){
         $(".story_box.story02 .prev_btn").on("click",function(){
