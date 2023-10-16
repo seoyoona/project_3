@@ -205,7 +205,7 @@ html.lock {overflow: hidden;}
 #main .section06 .road_map_list li span {display: inline-block; width: 90px; font-size: 1.439em; text-align: right; float:left;}
 #main .section06 .road_map_list li p {display:inline-block; float:right; width: 80%; word-break: keep-all;font-size:18px; color:#999;}
 #main .section06 .road_map_list li h5 {display:inline-block; float:right; width: 80%; word-break: keep-all; font-size:23px; padding-bottom:20px;}
-#main .section06 .road_map_list li .cover_roadmap {position:absolute; width:285px; height:126px;  z-index:999; background:url(/img/cover_complete.png) no-repeat; top:-30px; left:19%;}
+#main .section06 .road_map_list li .cover_roadmap {position:absolute; width:285px; height:126px;  z-index:999; background:url('../img/cover_complete.png') no-repeat; top:-30px; left:19%;}
 
 #main .section06 .pagination {max-width: 915px; margin-left:170px; margin-top:60px;}
 #main .section06 .pagination::after {content:""; display: block; width: 100%; height: 1px; background:rgba(255,255,255,0.2); position:absolute; margin-top:-12px;}
@@ -252,7 +252,7 @@ html.lock {overflow: hidden;}
 #main .section09 .faq_list > li > dl dd ul dl dt {font-weight: 600;}
 .cont_p .link_btn {font-size:14px; margin:20px 5px 20px 0px;}
 
-#footer {background:url("../img/f_bg.png") no-repeat center center #000; background-size:cover; padding:150px 0 270px}
+#footer {background:#000 url("../img/f_bg.png") no-repeat center center ; background-size:cover; padding:150px 0 270px}
 #footer .con {max-width: 1160px; display: flex; flex-wrap: wrap; justify-content: space-between; margin-left:10%;}
 #footer .con div {color:#fff; line-height: 1.67; font-size: 1.125em;}
 #footer .flogo {width: 100%; display: flex; align-items: center; color:#fff; margin-bottom:40px;}
