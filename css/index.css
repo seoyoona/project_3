@@ -1384,10 +1384,7 @@ html.lock {
   margin: 0 auto;
 }
 
-#header .con div,
-#header .con .gnb {
-  display: none;
-}
+
 
 #main .story .story_box.bayc .con .img_box,
 #main .story .story_box.bayc .con .txt_box {
