@@ -4,7 +4,7 @@ html.lock {
 
 .link_btn {
   display: inline-block;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: 500;
   background: #fff;
   padding: 12px 45px;
@@ -47,7 +47,7 @@ html.lock {
 }
 
 .cont_p {
-  font-size: 1.4375em;
+  font-size: 1.4375rem;
   font-weight: 300;
   line-height: 1.15;
   color: #fff;
@@ -86,6 +86,7 @@ html.lock {
   border-radius: 1.25rem;
 }
 #header .popup p {
+  font-size: 1rem;
   line-height: 250%;
   position: relative;
   padding-top: 2.5rem;
@@ -124,6 +125,7 @@ html.lock {
   transition: all 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 #header .con div a:first-child em {
+  font-size: 1rem;
   font-style: normal;
   position: relative;
   z-index: 2;
@@ -147,16 +149,17 @@ html.lock {
   transform: scale(0, 1);
   transition: all 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-#header .hlogo {
-  font-size: 34px;
+#header .hlogo a {
+  font-size: 50px;
   color: #fff;
 }
 #header .gnb {
+  font-size: 1rem;
   display: flex;
   color: #fff;
 }
 #header .gnb > li {
-  font-size: 1.25em;
+  font-size: inherit;
   padding: 0 25px;
   position: relative;
 }
@@ -197,6 +200,7 @@ html.lock {
   transition: all 0.45s;
 }
 #header .gnb li ul li a em {
+  font-size: 1rem;
   font-style: normal;
   position: relative;
   z-index: 2;
@@ -236,7 +240,7 @@ html.lock {
   padding: 17px 25px;
   z-index: 99;
   top: 100px;
-  right: 80px;
+  right: 12%;
   text-align: center;
 }
 #header .guide-list a {
@@ -437,7 +441,7 @@ html.lock {
   text-align: center;
 }
 #main .section01 .txt_box h2 {
-  font-size: 7.25em;
+  font-size: 7.25rem;
   font-weight: 900;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
@@ -498,6 +502,8 @@ html.lock {
   transition: all 2s ease-out;
 }
 #main .story .story_box {
+  width: 100%;
+  justify-content: center;
   background: #000000;
   padding: 150px 0;
   position: relative;
@@ -505,11 +511,13 @@ html.lock {
   padding: 70px 0;
 }
 #main .story .story_box.bayc_story {
+  width: 100%;
   color: #ffffff;
   text-align: center;
-  font-size: 1.4375em;
+  font-size: 1.4375rem;
 }
 #main .story .story_box.bayc_story .con {
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   max-width: 90%;
@@ -524,11 +532,11 @@ html.lock {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
 }
 #main .story .story_box.bayc .con .img_box {
-  width: 48%;
+  width: 100%;
   overflow: hidden;
   margin-bottom: 30px;
 }
@@ -585,6 +593,7 @@ html.lock {
   color: #ff00d8;
 }
 #main .story .story_box.parall {
+  width: 100%;
   padding: 70px 0;
 }
 #main .story .story_box.parall .con {
@@ -594,8 +603,8 @@ html.lock {
   position: static;
   text-align: center;
 }
-#main .story .story_box.parall .img_box {
-  width: 97%;
+#main .story .story_box.parall .con .img_box {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -603,33 +612,14 @@ html.lock {
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: visible !important;
-  width: 100%;
-  max-width: 800px;
-  position: unset;
-  transform: unset;
   margin: 0 auto 30px;
 }
-#main .story .story_box.parall .img_box img {
-  max-width: calc((90% - 650px) / 2);
+#main .story .story_box.parall .con .img_box img {
   border-radius: 44px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.7);
-  position: absolute;
-  transform: translateY(-50%);
   transition: all 1s ease-out;
-  max-width: calc(50% - 7.5px);
   padding: 0;
   margin-top: 0 !important;
-  position: unset;
-  transform: none;
-  padding: 0;
-}
-#main .story .story_box.parall .img_box img:first-child {
-  left: 0 !important;
-  margin-right: 15px;
-}
-#main .story .story_box.parall .img_box img:last-child {
-  left: unset !important;
-  right: 0 !important;
 }
 #main .story .story_box.parall .txt_box a {
   margin-top: 50px;
@@ -675,6 +665,11 @@ html.lock {
 #main .story .story_box.story02 .story02_slide {
   margin-top: 20px;
   overflow: hidden;
+}
+#main .story .story_box.story02 .story02_slide .img_box {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 #main .story .story_box.story02 .story02_slide .txt_box {
   background: #494949;
@@ -738,6 +733,7 @@ html.lock {
 #main .section03 {
   background: #0f0f0f;
   padding: 75px 0;
+  width: 100%;
 }
 #main .section03 .title_box {
   width: 90%;
@@ -1004,7 +1000,6 @@ html.lock {
 #main .section07 .member_list li {
   width: 18.5%;
   text-align: center;
-  width: 45%;
   margin-bottom: 20px;
 }
 #main .section07 .member_list li .img_box {
